@@ -200,6 +200,145 @@ footer a:hover{text-decoration:underline}
 .g-tooltip{position:fixed;z-index:999;background:var(--navy);color:#fff;border-radius:10px;padding:12px 16px;max-width:280px;font-size:12.5px;line-height:1.6;box-shadow:0 8px 32px rgba(0,0,0,.3);pointer-events:none;opacity:0;transition:opacity .18s;border:1px solid rgba(255,255,255,.1)}
 .g-tooltip.visible{opacity:1}
 .g-tooltip-term{font-weight:700;color:var(--gold-light);margin-bottom:4px;font-size:13px}
+
+/* ── LIVE TIMELINE TRACKER ── */
+.timeline-banner {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  color: #fff;
+  padding: 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.timeline-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 18px 20px;
+}
+.timeline-now {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.timeline-date-live {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+.timeline-date-live span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,.45);
+  display: block;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.timeline-next {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 13px;
+  text-align: right;
+}
+.timeline-next .tn-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 3px;
+}
+.timeline-next .tn-title {
+  font-weight: 700;
+  color: #fff;
+}
+.timeline-next .tn-days {
+  font-size: 11.5px;
+  color: var(--gold-light);
+  margin-top: 2px;
+}
+/* Progress bar */
+.tl-progress-wrap {
+  margin-bottom: 4px;
+}
+.tl-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10.5px;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 6px;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+.tl-progress-track {
+  height: 6px;
+  background: rgba(255,255,255,.1);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.tl-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  border-radius: 100px;
+  transition: width .6s ease;
+}
+/* Milestone dots */
+.tl-milestones {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.tl-dot {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: rgba(255,255,255,.5);
+  background: rgba(255,255,255,.05);
+  border-radius: 100px;
+  padding: 3px 10px 3px 6px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.tl-dot .dot-icon {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.tl-dot.done { color: rgba(255,255,255,.35); }
+.tl-dot.done .dot-icon { background: var(--green); }
+.tl-dot.active { color: #fff; border-color: var(--gold); background: rgba(200,155,60,.15); }
+.tl-dot.active .dot-icon { background: var(--gold); box-shadow: 0 0 0 3px rgba(200,155,60,.3); }
+.tl-dot.upcoming .dot-icon { background: rgba(255,255,255,.25); }
+.tl-dot.urgent { color: #ffb3b3; border-color: rgba(255,100,100,.4); }
+.tl-dot.urgent .dot-icon { background: #ff6b6b; }
+
+/* Deadline card status badges */
+.dl-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  float: right;
+  margin-top: -2px;
+}
+.dl-status.done { background: var(--green-bg); color: var(--green); }
+.dl-status.imminent { background: #fff3e0; color: #c05000; }
+.dl-status.urgent { background: var(--red-bg); color: var(--red); }
+.dl-status.upcoming { background: rgba(15,33,69,.06); color: var(--mid); }
+.deadline-card.is-done { opacity: .55; }
+.deadline-card.is-done .dl-title { text-decoration: line-through; text-decoration-color: var(--green); }
+.deadline-card.is-urgent { border-color: #f0a0a0; box-shadow: 0 0 0 3px rgba(220,80,80,.08); }
+.deadline-card.is-imminent { border-color: var(--amber-border); box-shadow: 0 0 0 3px rgba(200,155,60,.08); }
+
 </style>
 </head>
 <body>
@@ -226,6 +365,35 @@ footer a:hover{text-decoration:underline}
   <a href="#glossary">Glossary</a>
   <a href="#contacts">Contacts</a>
 </nav>
+
+
+<!-- LIVE TIMELINE TRACKER -->
+<div class="timeline-banner" id="timeline-banner">
+  <div class="timeline-inner">
+    <div class="timeline-now">
+      <div class="timeline-date-live">
+        <span>Today</span>
+        <span id="tl-date-display">—</span>
+      </div>
+      <div class="timeline-next" id="tl-next-box">
+        <div class="tn-label">Next Deadline</div>
+        <div class="tn-title" id="tl-next-title">Calculating...</div>
+        <div class="tn-days" id="tl-next-days"></div>
+      </div>
+    </div>
+    <div class="tl-progress-wrap">
+      <div class="tl-progress-label">
+        <span>Delegate Season Begins</span>
+        <span id="tl-pct-label">0%</span>
+        <span>June 5 Cutoff</span>
+      </div>
+      <div class="tl-progress-track">
+        <div class="tl-progress-fill" id="tl-fill" style="width:0%"></div>
+      </div>
+    </div>
+    <div class="tl-milestones" id="tl-milestones"></div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -262,7 +430,7 @@ footer a:hover{text-decoration:underline}
     <div class="deadline-list">
       <div class="deadline-card">
         <div class="dl-date-box"><span class="month">APR</span>14–15</div>
-        <div class="dl-content">
+        <div class="dl-content" data-deadline="2026-04-14" data-label="MTA Pre-Convention">
           <div class="dl-title">MTA <span class="glink" data-g="preconv">Pre-Convention Meeting</span></div>
           <div class="dl-desc">Choose April 14 <em>or</em> April 15, 4:30–7:30 PM. Pre-register via link in MTA email.</div>
           <span class="dl-badge dl-req">Required for full stipend</span>
@@ -270,7 +438,7 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="deadline-card">
         <div class="dl-date-box"><span class="month">APR</span>27</div>
-        <div class="dl-content">
+        <div class="dl-content" data-deadline="2026-04-27" data-label="SEA Pre-Convention">
           <div class="dl-title">SEA <span class="glink" data-g="preconv">Pre-Convention Meeting</span></div>
           <div class="dl-desc">4:15 PM — in person at SEA + Zoom. Meet MTA officer candidates (President, VP, Executive Committee).</div>
           <span class="dl-badge dl-req">Required for full stipend</span>
@@ -278,7 +446,7 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="deadline-card">
         <div class="dl-date-box"><span class="month">MAY</span>8</div>
-        <div class="dl-content">
+        <div class="dl-content" data-deadline="2026-05-08" data-label="Annual Meeting Day 1">
           <div class="dl-title">Annual Meeting — Day 1 (Friday)</div>
           <div class="dl-desc">Arrive 9 AM for caucuses. Business noon–~6 PM. Sign the <span class="glink" data-g="attendance">attendance sheet</span>. Turn in your <span class="glink" data-g="voting">voting receipt</span>.</div>
           <span class="dl-badge dl-event">Event</span>
@@ -286,7 +454,7 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="deadline-card">
         <div class="dl-date-box"><span class="month">MAY</span>9</div>
-        <div class="dl-content">
+        <div class="dl-content" data-deadline="2026-05-09" data-label="Annual Meeting Day 2">
           <div class="dl-title">Annual Meeting — Day 2 (Saturday)</div>
           <div class="dl-desc">9 AM–~4 PM. Sign the <span class="glink" data-g="attendance">attendance sheet</span>. Turn in your <span class="glink" data-g="voting">voting receipt</span>.</div>
           <span class="dl-badge dl-event">Event</span>
@@ -294,7 +462,7 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="deadline-card">
         <div class="dl-date-box"><span class="month">MAY</span>22</div>
-        <div class="dl-content">
+        <div class="dl-content" data-deadline="2026-05-22" data-label="Mileage Deadline">
           <div class="dl-title"><span class="glink" data-g="mileage">Mileage</span> &amp; Parking Receipts Due</div>
           <div class="dl-desc">Submit via the reimbursement form or directly to Lee Burgess.</div>
           <span class="dl-badge dl-hard">Hard deadline</span>
@@ -302,7 +470,7 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="deadline-card">
         <div class="dl-date-box" style="background:var(--red)"><span class="month">JUN</span>5</div>
-        <div class="dl-content">
+        <div class="dl-content" data-deadline="2026-06-05" data-label="Final Receipt Cutoff">
           <div class="dl-title">Absolute Receipt Cutoff</div>
           <div class="dl-desc">Nothing reimbursed after this date. No exceptions.</div>
           <span class="dl-badge dl-hard">Final cutoff</span>
