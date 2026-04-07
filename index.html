@@ -643,6 +643,148 @@ footer a:hover{text-decoration:underline}
 
 <!-- GLOSSARY DATA & TOOLTIP LOGIC -->
 <script>
+// ── LIVE TIMELINE TRACKER ──
+var DEADLINES = [
+  { date: '2026-04-14', label: 'MTA Pre-Convention Meeting', short: 'MTA Pre-Conv', type: 'req' },
+  { date: '2026-04-27', label: 'SEA Pre-Convention Meeting', short: 'SEA Pre-Conv', type: 'req' },
+  { date: '2026-05-08', label: 'Annual Meeting Day 1',       short: 'Day 1',        type: 'event' },
+  { date: '2026-05-09', label: 'Annual Meeting Day 2',       short: 'Day 2',        type: 'event' },
+  { date: '2026-05-22', label: 'Mileage & Parking Due',      short: 'Mileage Due',  type: 'hard' },
+  { date: '2026-06-05', label: 'Final Receipt Cutoff',       short: 'Cutoff',       type: 'hard' },
+];
+var SEASON_START = new Date(2026, 3, 1);  // April 1
+var SEASON_END   = new Date(2026, 5, 5);  // June 5
+
+function tlToday() {
+  var d = new Date();
+  d.setHours(0,0,0,0);
+  return d;
+}
+function tlParseDate(str) {
+  var p = str.split('-');
+  return new Date(+p[0], +p[1]-1, +p[2]);
+}
+function tlDaysUntil(d) {
+  return Math.round((d - tlToday()) / 86400000);
+}
+function tlFormatDate(d) {
+  try {
+    return d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+  } catch(e) { return d.toDateString(); }
+}
+
+function initTimeline() {
+  var dateEl = document.getElementById('tl-date-display');
+  if (!dateEl) { setTimeout(initTimeline, 150); return; }
+
+  // Date display
+  dateEl.textContent = tlFormatDate(tlToday());
+
+  // Progress bar
+  var now = tlToday();
+  var total = SEASON_END - SEASON_START;
+  var elapsed = Math.max(0, Math.min(now - SEASON_START, total));
+  var pct = Math.round((elapsed / total) * 100);
+  var fillEl = document.getElementById('tl-fill');
+  var pctEl  = document.getElementById('tl-pct-label');
+  if (fillEl) fillEl.style.width = pct + '%';
+  if (pctEl)  pctEl.textContent  = pct + '% through delegate season';
+
+  // Next deadline
+  var nextDl = null;
+  for (var i = 0; i < DEADLINES.length; i++) {
+    if (tlDaysUntil(tlParseDate(DEADLINES[i].date)) >= 0) { nextDl = DEADLINES[i]; break; }
+  }
+  var nextBox   = document.getElementById('tl-next-box');
+  var nextTitle = document.getElementById('tl-next-title');
+  var nextDays  = document.getElementById('tl-next-days');
+  if (nextTitle && nextDays) {
+    if (nextDl) {
+      var days = tlDaysUntil(tlParseDate(nextDl.date));
+      nextTitle.textContent = nextDl.label;
+      if (days === 0) {
+        nextDays.textContent = '⚡ TODAY';
+        if (nextBox) nextBox.style.borderColor = '#ff9800';
+      } else if (days === 1) {
+        nextDays.textContent = '⚠ Tomorrow';
+        if (nextBox) nextBox.style.borderColor = 'rgba(255,200,80,.5)';
+      } else if (days <= 7) {
+        nextDays.textContent = '⚠ ' + days + ' days away';
+        if (nextBox) nextBox.style.borderColor = 'rgba(255,200,80,.5)';
+      } else {
+        nextDays.textContent = days + ' days away';
+      }
+    } else {
+      nextTitle.textContent = 'All deadlines passed';
+      nextDays.textContent  = 'Delegate season complete';
+    }
+  }
+
+  // Milestone dots
+  var wrap = document.getElementById('tl-milestones');
+  if (wrap) {
+    wrap.innerHTML = '';
+    for (var j = 0; j < DEADLINES.length; j++) {
+      var dl   = DEADLINES[j];
+      var d2   = tlDaysUntil(tlParseDate(dl.date));
+      var dot  = document.createElement('div');
+      var cls  = 'tl-dot ';
+      if      (d2 < 0)  cls += 'done';
+      else if (d2 === 0) cls += 'active';
+      else if (d2 <= 7) cls += 'urgent';
+      else              cls += 'upcoming';
+      dot.className   = cls;
+      dot.innerHTML   = '<span class="dot-icon"></span>' + dl.short;
+      if (d2 >= 0 && d2 <= 7) dot.title = d2 === 0 ? 'TODAY' : d2 + ' days';
+      wrap.appendChild(dot);
+    }
+  }
+
+  // Deadline card status badges
+  document.querySelectorAll('[data-deadline]').forEach(function(el) {
+    var card  = el.closest('.deadline-card');
+    var dlDate = tlParseDate(el.getAttribute('data-deadline'));
+    var days  = tlDaysUntil(dlDate);
+    var badge = document.createElement('div');
+    badge.className = 'dl-status';
+    if (days < 0) {
+      badge.className += ' done';
+      badge.innerHTML  = '✓ Passed';
+      if (card) card.classList.add('is-done');
+    } else if (days === 0) {
+      badge.className += ' urgent';
+      badge.innerHTML  = '⚡ TODAY';
+      if (card) card.classList.add('is-urgent');
+    } else if (days <= 3) {
+      badge.className += ' urgent';
+      badge.innerHTML  = '⚠ ' + days + 'd left';
+      if (card) card.classList.add('is-urgent');
+    } else if (days <= 10) {
+      badge.className += ' imminent';
+      badge.innerHTML  = days + ' days';
+      if (card) card.classList.add('is-imminent');
+    } else {
+      badge.className += ' upcoming';
+      badge.innerHTML  = days + ' days';
+    }
+    var title = el.querySelector('.dl-title');
+    if (title) title.appendChild(badge);
+  });
+}
+
+// Robust init — works on GitHub Pages static hosting
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTimeline);
+} else {
+  initTimeline();
+}
+window.addEventListener('load', function() {
+  var el = document.getElementById('tl-date-display');
+  if (el && (el.textContent === '—' || el.textContent === '' || el.textContent === 'Calculating...')) {
+    initTimeline();
+  }
+});
+
 const GLOSSARY = {
   attendance: { term: "Attendance Sheet", def: "Paper sign-in sheet circulated during Annual Meeting sessions. You must sign it to receive your food stipend for that day. One sheet per day." },
   stipend: { term: "Food Stipend", def: "SEA reimbursement for meals: breakfast $23, lunch $26, dinner $38, incidentals $6.25/day. Total: $184 over two days. Itemized receipts required. No alcohol." },
