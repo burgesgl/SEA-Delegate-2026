@@ -159,13 +159,13 @@ main{max-width:720px;margin:0 auto;padding:0 20px 80px}
 .fc-btn-green:hover{background:#145a3c}
 
 /* ── W-9 DOWNLOAD SECTION ── */
-.w9-download-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:0}
-@media(max-width:500px){.w9-download-grid{grid-template-columns:1fr}}
-.w9-dl-card{background:var(--white);border:1px solid var(--warm-gray);border-radius:13px;padding:20px;display:flex;flex-direction:column;gap:10px;transition:box-shadow .18s}
+
+@media(max-width:500px){}
+
 .w9-dl-card:hover{box-shadow:0 4px 16px rgba(15,33,69,.08)}
-.w9-dl-card.restricted{border-color:var(--red-border);background:var(--red-bg)}
-.w9-dl-title{font-weight:700;font-size:14px;color:var(--navy);display:flex;align-items:center;gap:8px}
-.w9-dl-desc{font-size:12.5px;color:var(--mid);line-height:1.6;flex:1}
+
+
+
 .w9-dl-desc strong{color:var(--text)}
 .w9-email{background:var(--cream);border:2px dashed var(--warm-gray-dark);border-radius:8px;padding:11px 14px;font-family:monospace;font-size:12.5px;color:var(--navy);font-weight:600;text-align:center;margin:8px 0;line-height:1.6}
 
@@ -448,7 +448,7 @@ footer a:hover{text-decoration:underline}
         <div class="dl-date-box"><span class="month">MAY</span>8</div>
         <div class="dl-content" data-deadline="2026-05-08" data-label="Annual Meeting Day 1">
           <div class="dl-title">Annual Meeting — Day 1 (Friday)</div>
-          <div class="dl-desc">Arrive 9 AM for caucuses. Business noon–~6 PM. Sign the <span class="glink" data-g="attendance">attendance sheet</span>. Turn in your <span class="glink" data-g="voting">voting receipt</span>.</div>
+          <div class="dl-desc">Arrive 9 AM for caucuses. Business noon–~6 PM. Sign the <span class="glink" data-g="attendance">attendance sheet</span>. Check in with the SEA table.</div>
           <span class="dl-badge dl-event">Event</span>
         </div>
       </div>
@@ -456,7 +456,7 @@ footer a:hover{text-decoration:underline}
         <div class="dl-date-box"><span class="month">MAY</span>9</div>
         <div class="dl-content" data-deadline="2026-05-09" data-label="Annual Meeting Day 2">
           <div class="dl-title">Annual Meeting — Day 2 (Saturday)</div>
-          <div class="dl-desc">9 AM–~4 PM. Sign the <span class="glink" data-g="attendance">attendance sheet</span>. Turn in your <span class="glink" data-g="voting">voting receipt</span>.</div>
+          <div class="dl-desc">9 AM–~4 PM. Sign the <span class="glink" data-g="attendance">attendance sheet</span>. Check in with the SEA table.</div>
           <span class="dl-badge dl-event">Event</span>
         </div>
       </div>
@@ -544,7 +544,7 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="step-item">
         <div class="step-num blue">4</div>
-        <div><div class="st">Day 1 (Friday May 8) — arrive by 9 AM</div><div class="sd">Caucuses and vendors 9 AM. Business noon–~6 PM. <strong>Sign the <span class="glink" data-g="attendance">attendance sheet</span></strong> during sessions. <strong>Turn in your <span class="glink" data-g="voting">voting receipt</span></strong> to the SEA table.</div><span class="tag t-warn">Must sign sheet to receive food stipend</span></div>
+        <div><div class="st">Day 1 (Friday May 8) — arrive by 9 AM</div><div class="sd">Caucuses and vendors 9 AM. Business noon–~6 PM. <strong>Sign the <span class="glink" data-g="attendance">attendance sheet</span></strong> during sessions. <strong>Check in with the SEA table.</strong></div><span class="tag t-warn">Must sign sheet to receive food stipend</span></div>
       </div>
       <div class="step-item highlighted">
         <div class="step-num blue">5</div>
@@ -557,7 +557,7 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="step-item">
         <div class="step-num blue">6</div>
-        <div><div class="st">Day 2 (Saturday May 9) — 9 AM–~4 PM</div><div class="sd"><strong>Sign the <span class="glink" data-g="attendance">attendance sheet</span>.</strong> <strong>Turn in your <span class="glink" data-g="voting">voting receipt</span></strong> to the SEA table. Business ends when items are voted on or quorum is lost.</div><span class="tag t-warn">Must sign sheet to receive food stipend</span></div>
+        <div><div class="st">Day 2 (Saturday May 9) — 9 AM–~4 PM</div><div class="sd"><strong>Sign the <span class="glink" data-g="attendance">attendance sheet</span>.</strong> <strong>Check in with the SEA table.</strong> Business ends when items are voted on or quorum is lost.</div><span class="tag t-warn">Must sign sheet to receive food stipend</span></div>
       </div>
       <div class="step-item highlighted">
         <div class="step-num blue">7</div>
@@ -621,123 +621,18 @@ footer a:hover{text-decoration:underline}
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSciMk7-7XRI3-VtlZ6ydzxpB8p5pzQP3J8jnOASW36V5fbmow/viewform" target="_blank" class="fc-btn fc-btn-gold">📋 Open Form ↗</a>
       </div>
       <div class="form-card">
+        <div class="fc-icon">📄</div>
+        <div class="fc-title">IRS W-9 (Official)<span class="fc-scope">→ Download · Submit to MTA via Adobe Sign</span></div>
+        <div class="fc-desc">The official IRS form. Download, complete, and submit to MTA via their Adobe Sign link when it arrives. <strong>Most delegates select Individual / Sole proprietor and use their SSN.</strong></div>
+        <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank" class="fc-btn fc-btn-navy">⬇ Download IRS W-9 ↗</a>
+        <p style="font-size:11px;color:var(--light);margin-top:4px">Official IRS form · Opens irs.gov</p>
+      </div>
+      <div class="form-card">
         <div class="fc-icon">📋</div>
         <div class="fc-title"><span class="glink" data-g="soi">Statement of Intent</span><span class="fc-scope">→ MTA · NEA-RA delegates only</span></div>
         <div class="fc-desc"><strong>NEA-RA only.</strong> Required before MTA releases any funds. Link from MTA Governance email.</div>
         <span class="fc-btn fc-btn-disabled">Link coming from MTA</span>
       </div>
-      <div class="form-card">
-        <div class="fc-icon">📄</div>
-        <div class="fc-title">IRS <span class="glink" data-g="w9">W-9</span> to MTA<span class="fc-scope">→ Adobe Sign · NEA-RA</span></div>
-        <div class="fc-desc">Required for MTA to issue payment. Paired with <span class="glink" data-g="soi">SOI</span> — both must be on file before any funds release.</div>
-        <span class="fc-btn fc-btn-disabled">Link coming from MTA</span>
-      </div>
-
-    <!-- W-9 DOWNLOADS -->
-    <div class="eyebrow" style="margin-top:32px;margin-bottom:8px">W-9 Forms</div>
-    <p style="font-size:13.5px;color:var(--mid);margin-bottom:16px;line-height:1.6">Two separate <span class="glink" data-g="w9">W-9</span> submissions are required — one to MTA, one to SEA. They go through different channels.</p>
-
-    <div class="w9-download-grid">
-      <div class="w9-dl-card">
-        <div class="w9-dl-title">📄 IRS W-9 (Official)</div>
-        <div class="w9-dl-desc">The official IRS form. Download, complete, and submit to MTA via their Adobe Sign link when it arrives. <strong>Most delegates select Individual / Sole proprietor and use their SSN.</strong></div>
-        <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank" class="fc-btn fc-btn-navy">⬇ Download IRS W-9 ↗</a>
-        <p style="font-size:11px;color:var(--light);margin-top:4px">Official IRS form · Opens irs.gov</p>
-      </div>
-      <div class="w9-dl-card restricted">
-        <div class="w9-dl-title">🔒 SEA W-9 (Confidential)</div>
-        <div class="w9-dl-desc">SEA's copy for internal reimbursement records. <strong>Contains your SSN — email as attachment only.</strong> Do not submit through the Google Form.</div>
-        <a href="SEA_W9_Fillable.pdf" download class="fc-btn fc-btn-navy">⬇ Download SEA W-9</a>
-        <div class="w9-email">To: Treasurer@seateachers.com<br>Subject: SEA W-9 — [Your Full Name]</div>
-        <p style="font-size:11px;color:var(--red);margin-top:2px;font-weight:600">Email attachment only — not via form or shared link</p>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── GLOSSARY ── -->
-  <section class="section" id="glossary">
-    <div class="eyebrow">Reference</div>
-    <div class="section-title">Key Terms</div>
-    <p style="font-size:13.5px;color:var(--mid);margin-bottom:20px">Tap any <span class="glink" style="cursor:default">underlined term</span> throughout the page for a quick definition, or find the full list here.</p>
-
-    <div class="glossary">
-      <div class="g-item" id="g-attendance">
-        <div><div class="g-term">Attendance Sheet</div></div>
-        <div class="g-def">Paper sign-in sheet circulated during Annual Meeting sessions. <strong>You must sign it to receive your <a href="#g-stipend" style="color:var(--blue);text-decoration:none;font-weight:700">food stipend</a> for that day.</strong> One sheet per day.</div>
-      </div>
-      <div class="g-item" id="g-voting">
-        <div><div class="g-term">Voting Receipt</div></div>
-        <div class="g-def">Receipt generated when you vote during the Annual Meeting. Must be turned in to the SEA table — confirms you participated in business, not just attended.</div>
-      </div>
-      <div class="g-item" id="g-stipend">
-        <div><div class="g-term">Food Stipend</div></div>
-        <div class="g-def">SEA reimbursement for meals: breakfast $23, lunch $26, dinner $38, incidentals $6.25/day. Total: $184 over two days ($92/day). Itemized receipts required. No alcohol. No credit card statements.</div>
-      </div>
-      <div class="g-item" id="g-mileage">
-        <div><div class="g-term">Mileage Reimbursement</div></div>
-        <div class="g-def">Calculated at $0.70/mile from your departure address to Hynes Convention Center, Boston. Only delegates who traveled to Boston are eligible. Treasurer's office calculates the dollar amount — you enter miles driven.</div>
-      </div>
-      <div class="g-item" id="g-preconv">
-        <div><div class="g-term">Pre-Convention Meeting</div><div class="g-abbr">MTA + SEA</div></div>
-        <div class="g-def">Required briefings before the Annual Meeting. <strong>MTA's:</strong> April 14 or 15, 4:30–7:30 PM (choose one). <strong>SEA's:</strong> April 27, 4:15 PM, in person + Zoom. Attending both is required to be eligible for the full stipend.</div>
-      </div>
-      <div class="g-item" id="g-soi">
-        <div><div class="g-term">Statement of Intent</div><div class="g-abbr">SOI · NEA-RA only</div></div>
-        <div class="g-def"><strong>NEA-RA delegates only — not required for the Annual Meeting.</strong> Short form submitted to MTA confirming you'll serve as an NEA-RA delegate. Required before MTA releases any NEA-RA funds. Paired with W-9 — both must be on file.</div>
-      </div>
-      <div class="g-item" id="g-w9">
-        <div><div class="g-term">IRS Form W-9</div></div>
-        <div class="g-def">Federal tax form certifying your taxpayer ID (SSN for most individuals). <strong>Submitted twice:</strong> once to MTA via Adobe Sign (for NEA-RA funding), and once to SEA via email attachment (for SEA reimbursement). Contains sensitive information — handle accordingly.</div>
-      </div>
-      <div class="g-item" id="g-voucher">
-        <div><div class="g-term">Expense Voucher</div><div class="g-abbr">NEA-RA</div></div>
-        <div class="g-def">Form submitted to MTA Governance after the NEA-RA along with original receipts. Required to trigger post-RA reimbursement. MTA sends it in the delegate information packet.</div>
-      </div>
-      <div class="g-item" id="g-neafunding">
-        <div><div class="g-term">NEA-RA Delegate Funding</div></div>
-        <div class="g-def">MTA funding for NEA-RA travel. Local delegates: up to $800, all paid post-RA. Requires attending ≥6 of 8 sessions (75%) and ≥1 session per day (July 4–7). Missing the threshold forfeits the payment.</div>
-      </div>
-      <div class="g-item" id="g-budget">
-        <div><div class="g-term">SEA Budget Line 60701</div></div>
-        <div class="g-def">SEA's internal allocation for the Annual Meeting: $10,000 for hotel + $10,062.50 for food and mileage. Separate from MTA's NEA-RA delegate funding.</div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── CONTACTS ── -->
-  <section class="section" id="contacts">
-    <div class="eyebrow">Help</div>
-    <div class="section-title">Contacts</div>
-    <div class="contacts" style="margin-bottom:40px">
-      <div class="contact-card">
-        <div class="cc-role">SEA Treasurer — Questions &amp; Reimbursement</div>
-        <div class="cc-name">Lee Burgess</div>
-        <a href="tel:3365088092" class="cc-link">336.508.8092</a>
-        <a href="mailto:Treasurer@seateachers.com" class="cc-link">Treasurer@seateachers.com</a>
-      </div>
-      <div class="contact-card">
-        <div class="cc-role">MTA Governance — NEA-RA Forms</div>
-        <div class="cc-name">Jennifer Freeling</div>
-        <a href="mailto:MTAGovernance@massteacher.org" class="cc-link">MTAGovernance@massteacher.org</a>
-      </div>
-      <div class="contact-card">
-        <div class="cc-role">MTA RA Info</div>
-        <div class="cc-name">massteacher.org/ra</div>
-        <a href="https://massteacher.org/events-and-conferences/nea-ra" target="_blank" class="cc-link">Visit page ↗</a>
-      </div>
-    </div>
-
-    <!-- FINAL CTA -->
-    <div style="text-align:center;padding:8px 0 0">
-      <p style="font-size:13.5px;color:var(--mid);margin-bottom:18px">Need to submit expenses or check in before the event?</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSciMk7-7XRI3-VtlZ6ydzxpB8p5pzQP3J8jnOASW36V5fbmow/viewform" target="_blank" class="form-btn large">📋 Open Reimbursement Form ↗</a>
-      <p class="form-btn-note">Opens Google Forms · Responses go to Lee Burgess &amp; Sue Fielding</p>
-    </div>
-  </section>
 
 </main>
 
@@ -750,7 +645,6 @@ footer a:hover{text-decoration:underline}
 <script>
 const GLOSSARY = {
   attendance: { term: "Attendance Sheet", def: "Paper sign-in sheet circulated during Annual Meeting sessions. You must sign it to receive your food stipend for that day. One sheet per day." },
-  voting: { term: "Voting Receipt", def: "Receipt generated when you vote. Must be turned in to the SEA table — confirms you participated in business, not just attended." },
   stipend: { term: "Food Stipend", def: "SEA reimbursement for meals: breakfast $23, lunch $26, dinner $38, incidentals $6.25/day. Total: $184 over two days. Itemized receipts required. No alcohol." },
   mileage: { term: "Mileage Reimbursement", def: "Calculated at $0.70/mile from your departure address. Only delegates who traveled to Boston are eligible. Treasurer's office calculates the dollar amount." },
   preconv: { term: "Pre-Convention Meeting", def: "MTA's: April 14 or 15, 4:30–7:30 PM. SEA's: April 27, 4:15 PM in person + Zoom. Both required for full stipend eligibility." },
