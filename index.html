@@ -30,7 +30,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .glink:hover{color:var(--blue)}
 
 /* ── FORM BUTTON ── */
-.form-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:var(--navy);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;padding:15px 28px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(200,155,60,.3);letter-spacing:.2px}
+.form-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#f5c842;color:var(--navy);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;padding:15px 28px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;box-shadow:0 4px 14px rgba(200,155,60,.3);letter-spacing:.2px}
 .form-btn:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,155,60,.4)}
 .form-btn.large{font-size:17px;padding:18px 36px;border-radius:12px;box-shadow:0 6px 20px rgba(200,155,60,.35)}
 .form-btn.small{font-size:13px;padding:9px 16px;border-radius:8px}
@@ -38,17 +38,46 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
 /* ── STICKY HEADER ── */
 .site-header{position:sticky;top:0;z-index:200;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:12px 24px;box-shadow:0 2px 16px rgba(0,0,0,.3)}
-.logo{font-family:'Fraunces',serif;font-size:15px;color:#fff;font-weight:700;letter-spacing:.2px;text-decoration:none}
+.logo{font-family:'Fraunces',serif;font-size:20px;color:#fff;font-weight:700;letter-spacing:-.2px;text-decoration:none}
 .logo span{color:var(--gold-light)}
-.hdr-btn{display:flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:700;padding:8px 16px;border-radius:8px;text-decoration:none;transition:all .18s;white-space:nowrap;box-shadow:0 2px 8px rgba(200,155,60,.3)}
+.hdr-btn{display:flex;align-items:center;gap:6px;background:#f5c842;color:var(--navy);font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:700;padding:8px 16px;border-radius:8px;text-decoration:none;transition:all .18s;white-space:nowrap;box-shadow:0 2px 8px rgba(200,155,60,.3)}
 .hdr-btn:hover{background:var(--gold-light)}
 
-/* ── SECONDARY NAV ── */
+/* ── SECONDARY NAV — gold tab cards ── */
 .subnav{display:none}
 @media(min-width:600px){
-  .subnav{display:flex;background:rgba(15,33,69,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.07);padding:0 24px;overflow-x:auto;gap:0;position:sticky;top:52px;z-index:100}
-  .subnav a{color:rgba(255,255,255,.5);text-decoration:none;font-size:11.5px;font-weight:600;letter-spacing:.3px;padding:12px 14px;white-space:nowrap;border-bottom:2px solid transparent;transition:all .15s}
-  .subnav a:hover{color:#fff;border-color:var(--gold)}
+  .subnav{
+    display:flex;
+    background:#0d1c3a;
+    border-bottom:2px solid rgba(200,155,60,.3);
+    padding:10px 20px;
+    overflow-x:auto;
+    gap:8px;
+    position:sticky;
+    top:56px;
+    z-index:100;
+    align-items:center;
+  }
+  .subnav a{
+    color:var(--navy);
+    text-decoration:none;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.3px;
+    padding:7px 16px;
+    white-space:nowrap;
+    border-radius:8px;
+    background:#f5c842;
+    border:none;
+    transition:all .18s;
+    box-shadow:0 2px 8px rgba(200,155,60,.3);
+    display:inline-block;
+  }
+  .subnav a:hover{
+    background:#fdd96a;
+    transform:translateY(-1px);
+    box-shadow:0 4px 12px rgba(200,155,60,.45);
+  }
 }
 
 /* ── HERO ── */
@@ -62,7 +91,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .hero-sub{font-size:15px;color:rgba(255,255,255,.65);margin-bottom:36px;line-height:1.65;max-width:520px;margin-left:auto;margin-right:auto}
 .hero-events{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:40px}
 .event-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:7px 16px;font-size:12.5px;font-weight:500;display:flex;align-items:center;gap:8px;backdrop-filter:blur(4px)}
-.event-chip .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.event-chip .dot{width:6px;height:6px;border-radius:50%;background:#f5c842;flex-shrink:0}
 .hero-cta-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:28px 24px;backdrop-filter:blur(6px)}
 .hero-cta-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
 
@@ -150,7 +179,7 @@ main{max-width:720px;margin:0 auto;padding:0 20px 80px}
 .fc-btn{display:inline-flex;align-items:center;gap:5px;padding:9px 15px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:700;text-decoration:none;transition:all .18s;border:none;cursor:pointer;align-self:flex-start}
 .fc-btn-navy{background:var(--navy);color:#fff}
 .fc-btn-navy:hover{background:var(--navy-mid)}
-.fc-btn-gold{background:var(--gold);color:var(--navy)}
+.fc-btn-gold{background:#f5c842;color:var(--navy)}
 .fc-btn-gold:hover{background:var(--gold-light)}
 .fc-btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
 .fc-btn-outline:hover{background:var(--navy);color:#fff}
@@ -203,15 +232,16 @@ footer a:hover{text-decoration:underline}
 
 /* ── LIVE TIMELINE TRACKER ── */
 .timeline-banner {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  background: linear-gradient(135deg, #0a1830 0%, #122040 100%);
   color: #fff;
   padding: 0;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom: 2px solid var(--gold);
+  box-shadow: 0 2px 20px rgba(0,0,0,.4);
 }
 .timeline-inner {
   max-width: 720px;
   margin: 0 auto;
-  padding: 18px 20px;
+  padding: 20px 20px;
 }
 .timeline-now {
   display: flex;
@@ -219,48 +249,61 @@ footer a:hover{text-decoration:underline}
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 .timeline-date-live {
   font-family: 'Fraunces', serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
-  color: var(--gold-light);
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(200,155,60,.3);
 }
 .timeline-date-live span {
   font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255,255,255,.45);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--gold);
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
+}
+.timeline-date-live .tl-clock {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,.55);
+  display: block;
+  margin-top: 3px;
+  letter-spacing: .5px;
 }
 .timeline-next {
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(200,155,60,.12);
+  border: 1px solid rgba(200,155,60,.35);
   border-radius: 10px;
-  padding: 10px 16px;
+  padding: 12px 18px;
   font-size: 13px;
   text-align: right;
+  backdrop-filter: blur(4px);
 }
 .timeline-next .tn-label {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,.4);
-  margin-bottom: 3px;
+  color: var(--gold);
+  margin-bottom: 4px;
 }
 .timeline-next .tn-title {
   font-weight: 700;
   color: #fff;
+  font-size: 14px;
 }
 .timeline-next .tn-days {
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--gold-light);
-  margin-top: 2px;
+  margin-top: 3px;
+  font-weight: 600;
 }
 /* Progress bar */
 .tl-progress-wrap {
@@ -339,6 +382,69 @@ footer a:hover{text-decoration:underline}
 .deadline-card.is-urgent { border-color: #f0a0a0; box-shadow: 0 0 0 3px rgba(220,80,80,.08); }
 .deadline-card.is-imminent { border-color: var(--amber-border); box-shadow: 0 0 0 3px rgba(200,155,60,.08); }
 
+
+/* ── RESPONSIVE — MOBILE & DESKTOP ── */
+
+/* Base = mobile-first */
+.info-grid,
+.events-grid,
+.forms-grid,
+.contacts {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet and up */
+@media(min-width:540px) {
+  .info-grid { grid-template-columns: 1fr 1fr; }
+  .forms-grid { grid-template-columns: 1fr 1fr; }
+  .contacts { grid-template-columns: 1fr 1fr; }
+}
+
+/* Desktop */
+@media(min-width:720px) {
+  .stipend-table th, .stipend-table td { padding: 12px 18px; font-size: 14px; }
+  .step-item { padding: 16px 18px; }
+  .section-title { font-size: 30px; }
+}
+
+/* Mobile-specific overrides */
+@media(max-width:539px) {
+  .site-header { padding: 10px 16px; }
+  .logo { font-size: 17px; }
+  .hdr-btn { font-size: 11.5px; padding: 7px 12px; }
+  .hero { padding: 36px 16px 32px; }
+  .hero h1 { font-size: 34px; }
+  .hero-sub { font-size: 14px; }
+  .hero-cta-box { padding: 18px 14px; }
+  .form-btn.large { font-size: 15px; padding: 15px 22px; }
+  main { padding: 0 14px 60px; }
+  .section { padding: 38px 0 0; }
+  .section-title { font-size: 24px; }
+  .timeline-inner { padding: 14px 14px; }
+  .timeline-date-live { font-size: 18px; }
+  .timeline-next { padding: 10px 12px; }
+  .deadline-card { padding: 12px 12px; }
+  .dl-date-box { min-width: 52px; padding: 6px 8px; font-size: 16px; }
+  .cta-strip { padding: 14px 14px; }
+  .stipend-table th, .stipend-table td { padding: 9px 10px; font-size: 12.5px; }
+  .glossary .g-item { padding: 12px 14px; }
+  .contact-card { padding: 12px 14px; }
+  .tl-milestones { gap: 4px; }
+  .tl-dot { font-size: 10px; padding: 2px 8px 2px 5px; }
+  .step-item { padding: 12px 12px; gap: 10px; }
+  .step-num { width: 24px; height: 24px; font-size: 10px; }
+  .st { font-size: 13px; }
+  .sd { font-size: 12px; }
+}
+
+/* Print */
+@media print {
+  .site-header, .subnav, .timeline-banner, .cta-strip { display: none !important; }
+  .hero { background: white !important; color: black !important; padding: 20px 0; }
+  .hero h1 { color: #0f2145 !important; }
+  main { padding: 0; }
+}
+
 </style>
 </head>
 <body>
@@ -373,7 +479,7 @@ footer a:hover{text-decoration:underline}
     <div class="timeline-now">
       <div class="timeline-date-live">
         <span>Today</span>
-        <span id="tl-date-display">—</span>
+        <span id="tl-date-display">—</span><span class="tl-clock" id="tl-clock-display"></span>
       </div>
       <div class="timeline-next" id="tl-next-box">
         <div class="tn-label">Next Deadline</div>
@@ -403,7 +509,7 @@ footer a:hover{text-decoration:underline}
     <p class="hero-sub">Deadlines, stipend rates, checklists, and your reimbursement form — everything in one place.</p>
     <div class="hero-events">
       <div class="event-chip"><span class="dot"></span>MTA Annual Meeting · Boston · May 8–9</div>
-      <div class="event-chip"><span class="dot"></span>NEA-RA · Denver, CO · July 3–7</div>
+      <a href="nea_ra_2026.html" class="event-chip" style="text-decoration:none;cursor:pointer;transition:background .18s" onmouseover="this.style.background='rgba(255,255,255,.18)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><span class="dot"></span>NEA-RA · Denver, CO · July 3–7 ↗</a>
     </div>
     <div class="hero-cta-box">
       <div class="hero-cta-label">MTA Annual Meeting Reimbursement</div>
@@ -448,7 +554,7 @@ footer a:hover{text-decoration:underline}
         <div class="dl-date-box"><span class="month">MAY</span>8</div>
         <div class="dl-content" data-deadline="2026-05-08" data-label="Annual Meeting Day 1">
           <div class="dl-title">Annual Meeting — Day 1 (Friday)</div>
-          <div class="dl-desc">Arrive 9 AM for caucuses. Business noon–~6 PM. Sign the <span class="glink" data-g="attendance">attendance sheet</span>. Check in with the SEA table.</div>
+          <div class="dl-desc">Arrive 9 AM for caucuses. Business noon–~6 PM. Sign the <span class="glink" data-g="attendance">attendance sheet</span>.</div>
           <span class="dl-badge dl-event">Event</span>
         </div>
       </div>
@@ -456,7 +562,7 @@ footer a:hover{text-decoration:underline}
         <div class="dl-date-box"><span class="month">MAY</span>9</div>
         <div class="dl-content" data-deadline="2026-05-09" data-label="Annual Meeting Day 2">
           <div class="dl-title">Annual Meeting — Day 2 (Saturday)</div>
-          <div class="dl-desc">9 AM–~4 PM. Sign the <span class="glink" data-g="attendance">attendance sheet</span>. Check in with the SEA table.</div>
+          <div class="dl-desc">9 AM–~4 PM. Sign the <span class="glink" data-g="attendance">attendance sheet</span>.</div>
           <span class="dl-badge dl-event">Event</span>
         </div>
       </div>
@@ -503,13 +609,12 @@ footer a:hover{text-decoration:underline}
         <tr><td>Breakfast</td><td>Saturday May 9</td><td>$23.00</td></tr>
         <tr><td>Lunch</td><td>Saturday May 9</td><td>$26.00</td></tr>
         <tr><td>Dinner</td><td>Saturday May 9</td><td>$38.00</td></tr>
-        <tr><td>Incidentals</td><td>Per day</td><td>$6.25</td></tr>
         <tr><td>Mileage</td><td>—</td><td>$0.70 / mile</td></tr>
         <tr><td>Parking</td><td>—</td><td>Actual cost</td></tr>
         <tr class="stipend-total"><td colspan="2">Total <span style="font-weight:400;opacity:.7">(food, 2 full days)</span></td><td>$184.00</td></tr>
       </tbody>
     </table>
-    <p class="stipend-note">No Friday breakfast — business begins at noon. Dinners marked TBD: check with Lee day-of to confirm whether SEA is sponsoring.</p>
+    <p class="stipend-note">No Friday breakfast — business begins at noon. Dinners marked TBD: check with Lee day-of to confirm whether SEA is sponsoring. Receipts must be itemized — no alcohol, no credit card statements.</p>
 
     <div class="cta-strip" style="margin-top:22px">
       <div><div class="ct">Log today's expenses</div><div class="cs">Upload receipt photos directly in the form</div></div>
@@ -539,12 +644,8 @@ footer a:hover{text-decoration:underline}
         <div><div class="st">Attend SEA <span class="glink" data-g="preconv">pre-convention meeting</span></div><div class="sd">April 27, 4:15 PM — in person + Zoom. Meet MTA officer candidates.</div><span class="tag t-req">Required for full stipend</span></div>
       </div>
       <div class="step-item">
-        <div class="step-num">3</div>
-        <div><div class="st">Bring your MTA credentials</div><div class="sd">MTA emails them before the event. Bring them — check-in without them is slow and painful.</div><span class="tag t-dl">Bring to event</span></div>
-      </div>
-      <div class="step-item">
         <div class="step-num blue">4</div>
-        <div><div class="st">Day 1 (Friday May 8) — arrive by 9 AM</div><div class="sd">Caucuses and vendors 9 AM. Business noon–~6 PM. <strong>Sign the <span class="glink" data-g="attendance">attendance sheet</span></strong> during sessions. <strong>Check in with the SEA table.</strong></div><span class="tag t-warn">Must sign sheet to receive food stipend</span></div>
+        <div><div class="st">Day 1 (Friday May 8) — arrive by 9 AM</div><div class="sd">Caucuses and vendors 9 AM. Business noon–~6 PM. <strong>Sign the <span class="glink" data-g="attendance">attendance sheet</span></strong> during sessions.</div><span class="tag t-warn">Must sign sheet to receive food stipend</span></div>
       </div>
       <div class="step-item highlighted">
         <div class="step-num blue">5</div>
@@ -557,7 +658,7 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="step-item">
         <div class="step-num blue">6</div>
-        <div><div class="st">Day 2 (Saturday May 9) — 9 AM–~4 PM</div><div class="sd"><strong>Sign the <span class="glink" data-g="attendance">attendance sheet</span>.</strong> <strong>Check in with the SEA table.</strong> Business ends when items are voted on or quorum is lost.</div><span class="tag t-warn">Must sign sheet to receive food stipend</span></div>
+        <div><div class="st">Day 2 (Saturday May 9) — 9 AM–~4 PM</div><div class="sd"><strong>Sign the <span class="glink" data-g="attendance">attendance sheet</span>.</strong> Business ends when items are voted on or quorum is lost.</div><span class="tag t-warn">Must sign sheet to receive food stipend</span></div>
       </div>
       <div class="step-item highlighted">
         <div class="step-num blue">7</div>
@@ -571,6 +672,13 @@ footer a:hover{text-decoration:underline}
     </div>
 
     <div id="tab-nea" class="step-content">
+      <div style="background:var(--gold-pale);border:1px solid var(--gold);border-radius:11px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px">
+        <div>
+          <div style="font-weight:700;font-size:14px;color:var(--navy)">NEA-RA has its own page</div>
+          <div style="font-size:12.5px;color:var(--mid);margin-top:2px">Full logistics, funding tables, forms, and checklist — Denver July 3–7</div>
+        </div>
+        <a href="nea_ra_2026.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:700;padding:9px 16px;border-radius:8px;text-decoration:none;white-space:nowrap">View NEA-RA Page ↗</a>
+      </div>
       <div class="step-item">
         <div class="step-num warn">!</div>
         <div><div class="st">Submit <span class="glink" data-g="soi">SOI</span> + W-9 to MTA first</div><div class="sd">Funds not released until both forms are on file. Links come in MTA Governance email.</div><span class="tag t-warn">Gate — do this first</span></div>
@@ -581,11 +689,11 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="step-item">
         <div class="step-num">2</div>
-        <div><div class="st">Submit IRS <span class="glink" data-g="w9">W-9</span> to MTA</div><div class="sd">Via Adobe Sign link in MTA Governance email.</div><span class="tag t-req">Required</span></div>
+        <div><div class="st">Submit IRS <span class="glink" data-g="w9">W-9</span> to MTA</div><div class="sd">Submit via MTA's Adobe Sign portal. <strong>Note:</strong> This is the 2025 link — MTA will send a fresh link for 2026 when delegate information is distributed.</div><span class="tag t-req">Required</span><br><a href="https://massteacher.na2.adobesign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhBGPMKTigyS8qomPTsIOlZGD2FkfMwO77a134IncHdQRqD8qOZ3EXuWZtkdZk_AZRc*" target="_blank" class="form-btn small" style="margin-top:10px;background:var(--green);color:#fff;box-shadow:none">✍ Open Adobe Sign ↗</a></div>
       </div>
       <div class="step-item">
         <div class="step-num">3</div>
-        <div><div class="st">Email SEA <span class="glink" data-g="w9">W-9</span> separately</div><div class="sd">Download the SEA W-9 from the Forms section. Email to Treasurer@seateachers.com — subject: "SEA W-9 — [Your Name]".</div><span class="tag t-req">Required for SEA reimbursement</span></div>
+        <div><div class="st">Email SEA <span class="glink" data-g="w9">W-9</span> separately</div><div class="sd">Download the SEA W-9 from the Forms section. Email to <a href="mailto:Treasurer@seateachers.com" style="color:inherit;text-decoration:underline;text-decoration-style:dotted">Treasurer@seateachers.com</a> — subject: "SEA W-9 — [Your Name]".</div><span class="tag t-req">Required for SEA reimbursement</span></div>
       </div>
       <div class="step-item">
         <div class="step-num">4</div>
@@ -623,9 +731,12 @@ footer a:hover{text-decoration:underline}
       <div class="form-card">
         <div class="fc-icon">📄</div>
         <div class="fc-title">IRS W-9 (Official)<span class="fc-scope">→ Download · Submit to MTA via Adobe Sign</span></div>
-        <div class="fc-desc">The official IRS form. Download, complete, and submit to MTA via their Adobe Sign link when it arrives. <strong>Most delegates select Individual / Sole proprietor and use their SSN.</strong></div>
-        <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank" class="fc-btn fc-btn-navy">⬇ Download IRS W-9 ↗</a>
-        <p style="font-size:11px;color:var(--light);margin-top:4px">Official IRS form · Opens irs.gov</p>
+        <div class="fc-desc">Download the official IRS form, complete it, then submit to MTA via Adobe Sign. <strong>Most delegates select Individual / Sole proprietor and use their SSN.</strong></div>
+        <div style="display:flex;flex-direction:column;gap:8px;align-self:flex-start">
+          <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank" class="fc-btn fc-btn-navy">⬇ Download IRS W-9 ↗</a>
+          <a href="https://massteacher.na2.adobesign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhBGPMKTigyS8qomPTsIOlZGD2FkfMwO77a134IncHdQRqD8qOZ3EXuWZtkdZk_AZRc*" target="_blank" class="fc-btn fc-btn-navy" style="background:var(--green)">✍ Submit to MTA via Adobe Sign ↗</a>
+        </div>
+        <p style="font-size:11px;color:var(--light);margin-top:4px">Download from irs.gov · Submit via MTA Adobe Sign</p>
       </div>
       <div class="form-card">
         <div class="fc-icon">📋</div>
@@ -740,6 +851,19 @@ function initTimeline() {
     }
   }
 
+  // Live clock — ticks every second
+  function updateClock() {
+    var clockEl = document.getElementById('tl-clock-display');
+    if (!clockEl) return;
+    var n = new Date();
+    var h = n.getHours(), m = String(n.getMinutes()).padStart(2,'0'), s = String(n.getSeconds()).padStart(2,'0');
+    var ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    clockEl.textContent = h + ':' + m + ':' + s + ' ' + ampm;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
   // Deadline card status badges
   document.querySelectorAll('[data-deadline]').forEach(function(el) {
     var card  = el.closest('.deadline-card');
@@ -791,7 +915,7 @@ const GLOSSARY = {
   mileage: { term: "Mileage Reimbursement", def: "Calculated at $0.70/mile from your departure address. Only delegates who traveled to Boston are eligible. Treasurer's office calculates the dollar amount." },
   preconv: { term: "Pre-Convention Meeting", def: "MTA's: April 14 or 15, 4:30–7:30 PM. SEA's: April 27, 4:15 PM in person + Zoom. Both required for full stipend eligibility." },
   soi: { term: "Statement of Intent (SOI)", def: "NEA-RA delegates only — not required for the Annual Meeting. Confirms you'll serve as an NEA-RA delegate. Required before MTA releases any funds." },
-  w9: { term: "IRS Form W-9", def: "Federal tax form certifying your SSN/TIN. Submitted twice: to MTA via Adobe Sign, and to SEA via email attachment. Contains sensitive info — email only." },
+  w9: { term: "IRS Form W-9", def: "Federal tax form certifying your SSN/TIN. Download from irs.gov, complete it, then submit to MTA via Adobe Sign. Most delegates select Individual / Sole proprietor and use their SSN." },
   voucher: { term: "Expense Voucher", def: "Submitted to MTA Governance after the NEA-RA with receipts. Required to trigger post-RA reimbursement." },
   neafunding: { term: "NEA-RA Delegate Funding", def: "Local delegates: up to $800, all post-RA. Requires ≥6 of 8 sessions (75%) and ≥1 session per day (July 4–7)." },
   budget: { term: "SEA Budget Line 60701", def: "SEA's allocation for the Annual Meeting: $10,000 hotel + $10,062.50 food/mileage. Separate from MTA's NEA-RA funding." },
