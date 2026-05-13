@@ -730,13 +730,20 @@ footer a:hover{text-decoration:underline}
       </div>
       <div class="form-card">
         <div class="fc-icon">📄</div>
-        <div class="fc-title">IRS W-9 (Official)<span class="fc-scope">→ Download · Submit to MTA via Adobe Sign</span></div>
-        <div class="fc-desc">Download the official IRS form, complete it, then submit to MTA via Adobe Sign. <strong>Most delegates select Individual / Sole proprietor and use their SSN.</strong></div>
+        <div class="fc-title">IRS <span class="glink" data-g="w4">W-4</span><span class="fc-scope">→ MTA Annual Meeting delegates · Email to SEA</span></div>
+        <div class="fc-desc">Annual Meeting delegates submit a W-4 to SEA before reimbursement can be issued. Download, complete, and email as an attachment.<br><br>To: <strong>Treasurer@seateachers.com</strong><br>Subject: <strong>SEA W-4 — [Your Full Name]</strong></div>
+        <a href="https://www.irs.gov/pub/irs-pdf/fw4.pdf" target="_blank" class="fc-btn fc-btn-navy">⬇ Download IRS W-4 ↗</a>
+        <p style="font-size:11px;color:var(--light);margin-top:4px">Official IRS form · Opens irs.gov</p>
+      </div>
+      <div class="form-card">
+        <div class="fc-icon">📄</div>
+        <div class="fc-title">IRS <span class="glink" data-g="w9">W-9</span><span class="fc-scope">→ NEA-RA delegates only · Submit to MTA</span></div>
+        <div class="fc-desc"><strong>NEA-RA delegates only — not for Annual Meeting.</strong> Required before MTA releases any funds. Download, complete, and submit to MTA via Adobe Sign.</div>
         <div style="display:flex;flex-direction:column;gap:8px;align-self:flex-start">
           <a href="https://www.irs.gov/pub/irs-pdf/fw9.pdf" target="_blank" class="fc-btn fc-btn-navy">⬇ Download IRS W-9 ↗</a>
           <a href="https://massteacher.na2.adobesign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhBGPMKTigyS8qomPTsIOlZGD2FkfMwO77a134IncHdQRqD8qOZ3EXuWZtkdZk_AZRc*" target="_blank" class="fc-btn fc-btn-navy" style="background:var(--green)">✍ Submit to MTA via Adobe Sign ↗</a>
         </div>
-        <p style="font-size:11px;color:var(--light);margin-top:4px">Download from irs.gov · Submit via MTA Adobe Sign</p>
+        <p style="font-size:11px;color:var(--amber);margin-top:4px;font-weight:600">⚠ 2025 link — MTA will send updated 2026 link</p>
       </div>
       <div class="form-card">
         <div class="fc-icon">📋</div>
@@ -775,9 +782,13 @@ footer a:hover{text-decoration:underline}
         <div><div class="g-term">Statement of Intent</div><div class="g-abbr">SOI · NEA-RA only</div></div>
         <div class="g-def"><strong>NEA-RA delegates only — not required for the Annual Meeting.</strong> Short form submitted to MTA confirming you'll serve as an NEA-RA delegate. Required before MTA releases any NEA-RA funds. Paired with W-9 — both must be on file.</div>
       </div>
+      <div class="g-item" id="g-w4">
+        <div><div class="g-term">IRS Form W-4</div><div class="g-abbr">MTA Annual Meeting delegates</div></div>
+        <div class="g-def">Employee's Withholding Certificate. Required by SEA before issuing reimbursement to Annual Meeting delegates. Download from irs.gov, complete it, and email as an attachment to Treasurer@seateachers.com with subject "SEA W-4 — [Your Name]".</div>
+      </div>
       <div class="g-item" id="g-w9">
-        <div><div class="g-term">IRS Form W-9</div></div>
-        <div class="g-def">Federal tax form certifying your taxpayer ID (SSN for most individuals). Download from irs.gov, complete it, then submit to MTA via Adobe Sign. Most delegates select Individual / Sole proprietor and use their SSN.</div>
+        <div><div class="g-term">IRS Form W-9</div><div class="g-abbr">NEA-RA delegates only</div></div>
+        <div class="g-def"><strong>NEA-RA delegates only — not required for the Annual Meeting.</strong> Certifies your SSN/TIN for MTA to issue NEA-RA reimbursement. Download from irs.gov, submit to MTA via Adobe Sign. Most delegates select Individual / Sole proprietor.</div>
       </div>
       <div class="g-item" id="g-voucher">
         <div><div class="g-term">Expense Voucher</div><div class="g-abbr">NEA-RA</div></div>
@@ -812,6 +823,11 @@ footer a:hover{text-decoration:underline}
         <div class="cc-name">Riley Hernandez</div>
         <a href="tel:9099384203" class="cc-link">909-938-4203</a>
         <a href="mailto:President@seateachers.com" class="cc-link">President@seateachers.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-role">SEA Finance</div>
+        <div class="cc-name">Sue Fielding</div>
+        <a href="mailto:membership@seateachers.com" class="cc-link">membership@seateachers.com</a>
       </div>
       <div class="contact-card">
         <div class="cc-role">MTA Governance — NEA-RA Forms &amp; Links</div>
@@ -1001,7 +1017,8 @@ const GLOSSARY = {
   mileage: { term: "Mileage Reimbursement", def: "Calculated at $0.70/mile from your departure address. Only delegates who traveled to Boston are eligible. Treasurer's office calculates the dollar amount." },
   preconv: { term: "Pre-Convention Meeting", def: "MTA's: April 14 or 15, 4:30–7:30 PM. SEA's: April 27, 4:15 PM in person + Zoom. Both required for full stipend eligibility." },
   soi: { term: "Statement of Intent (SOI)", def: "NEA-RA delegates only — not required for the Annual Meeting. Confirms you'll serve as an NEA-RA delegate. Required before MTA releases any funds." },
-  w9: { term: "IRS Form W-9", def: "Federal tax form certifying your SSN/TIN. Download from irs.gov, complete it, then submit to MTA via Adobe Sign. Most delegates select Individual / Sole proprietor and use their SSN." },
+  w4: { term: "IRS Form W-4", def: "Employee's Withholding Certificate. Required by SEA before issuing reimbursement to MTA Annual Meeting delegates. Download from irs.gov, complete it, and email as an attachment to Treasurer@seateachers.com." },
+  w9: { term: "IRS Form W-9", def: "Required for NEA-RA delegates only — not for the MTA Annual Meeting. Submit to MTA via Adobe Sign. Certifies your SSN/TIN for MTA to issue payment. Most delegates select Individual / Sole proprietor." },
   voucher: { term: "Expense Voucher", def: "Submitted to MTA Governance after the NEA-RA with receipts. Required to trigger post-RA reimbursement." },
   neafunding: { term: "NEA-RA Delegate Funding", def: "Local delegates: up to $800, all post-RA. Requires ≥6 of 8 sessions (75%) and ≥1 session per day (July 4–7)." },
   budget: { term: "SEA Budget Line 60701", def: "SEA's allocation for the Annual Meeting: $10,000 hotel + $10,062.50 food/mileage. Separate from MTA's NEA-RA funding." },
